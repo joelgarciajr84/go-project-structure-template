@@ -1,18 +1,10 @@
-#all: test vet lint build
+all: test vet build
 
-#test:
-#    go test ./...
+test:
+    go test ./...
 
-#vet:
- #   go vet ./...
-
-#fmt:
-    #go list -f '{{.Dir}}' ./... | grep -v /vendor/ | xargs -L1 gofmt -l
-    #test -z $$(go list -f '{{.Dir}}' ./... | grep -v /vendor/ | xargs -L1 gofmt -l)
-
-#lint:
- #   go list ./... | grep -v /vendor/ | xargs -L1 golint -set_exit_status
+vet:
+    go vet ./...
 
 build:
     go build -o bin/api ./cmd/
-    #go build -o bin/worker ./cmd/worker

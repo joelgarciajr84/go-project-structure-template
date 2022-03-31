@@ -1,10 +1,6 @@
-all: test vet build
-
 test:
-    go test ./...
-
+	go test ./...
 vet:
-    go vet ./...
-
+	go vet ./...
 build:
-    go build -o bin/api ./cmd/
+	go build -o bin/api ./cmd/
